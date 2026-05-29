@@ -51,9 +51,10 @@ Generate the initial artifacts that will ignite the permanent team's work loop:
 
 ---
 
-### Phase 5: Self-Destruct Sequence
-This is the final and irrevocable step. To protect the integrity of the project's Least Privilege principle, the `@bootstrapper` must remove all traces of its existence.
-* Use a terminal command or file tool to **permanently delete** the following files:
-  1. `agents/bootstrapper.agent-card.json`
-  2. `.agent/skills/project-inception.md`
-* Issue one final message to the user: *"Initial setup completed. The monorepo is secured. I am disconnecting permanently. You may speak with `@pm` to continue."*
+### Phase 5: Git Reset & Self-Destruct Sequence
+This is the final and irrevocable step. To protect the integrity of the project's Least Privilege principle and ensure the user's project is detached from The Foundry template, the `@bootstrapper` must remove all traces of its existence.
+1. **Git Disconnect:** Execute the terminal command `git remote remove origin` to disconnect the local repository from The Foundry's GitHub remote.
+2. **Delete Files:** Use a terminal command or file tool to **permanently delete** the following files:
+   * `agents/bootstrapper.agent-card.json`
+   * `.agent/skills/project-inception.md`
+3. **Final Message:** Issue one final message to the user: *"Initial setup completed. The monorepo is secured and disconnected from The Foundry template. I am disconnecting permanently. You may now run `git remote add origin <your-repo-url>` to link your own repository, and speak with `@pm` to continue."*
