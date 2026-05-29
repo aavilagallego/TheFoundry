@@ -43,18 +43,13 @@ Based on the Tech Stack defined in Phase 1, configure the physical boundaries of
 
 ---
 
-### Phase 4: Functional Handoff to `@pm`
-Generate the initial artifacts that will ignite the permanent team's work loop:
-1. Create `docs/brief.md` with an executive summary of the user's vision.
-2. Create `docs/roadmap.md` structuring the MVP into initial Epics.
-3. Write an A2A request ticket (using TOML format) directed to `@pm` asking them to take control, review the `brief.md`, and start refining the user stories.
-
----
-
-### Phase 5: Git Reset & Self-Destruct Sequence
+### Phase 4: Git Reset & Self-Destruct Sequence
 This is the final and irrevocable step. To protect the integrity of the project's Least Privilege principle and ensure the user's project is detached from The Foundry template, the `@bootstrapper` must remove all traces of its existence.
 1. **Git Disconnect:** Execute the terminal command `git remote remove origin` to disconnect the local repository from The Foundry's GitHub remote.
 2. **Delete Files:** Use a terminal command or file tool to **permanently delete** the following files:
    * `agents/bootstrapper.agent-card.json`
    * `.agent/skills/project-inception.md`
-3. **Final Message:** Issue one final message to the user: *"Initial setup completed. The monorepo is secured and disconnected from The Foundry template. I am disconnecting permanently. You may now run `git remote add origin <your-repo-url>` to link your own repository, and speak with `@pm` to continue."*
+   * `start.md`
+3. **Final Message:** Issue one final message to the user containing exactly this prompt so they can copy and paste it:
+*"Setup completed. The monorepo is secured and disconnected from The Foundry template. You may now run `git remote add origin <your-repo-url>` to link your own repository. Copy and paste the following prompt to start the product definition:"*
+`@pm the environment is ready. I want to build a [Insert Project Name]. Please interview me to define the MVP scope, and create the docs/brief.md and docs/roadmap.md.`

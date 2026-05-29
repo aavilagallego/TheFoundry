@@ -89,9 +89,8 @@ The system will automatically read the `start.md` file, which contains explicit 
 1. Interview you for your project details (Tech Stack, Idea).
 2. Hydrate the `AGENTS.md` Constitution with your project's DNA.
 3. Configure the specific folder boundaries for the `@frontend` and `@backend` agents based on your chosen stack.
-4. Draft the initial `docs/roadmap.md` and `docs/brief.md`.
-5. Hand over control to the permanent Product Manager (`@pm`).
-6. **Self-Destruct:** It will completely remove the Foundry `origin` remote, and permanently delete its own source code (including the `start.md` file) to ensure your repository remains perfectly clean.
+4. **Self-Destruct:** It will completely remove the Foundry `origin` remote, and permanently delete its own source code (including the `start.md` file) to ensure your repository remains perfectly clean.
+5. Provide you with a ready-to-use prompt to hand over control to the permanent Product Manager (`@pm`) so you can define your MVP and product docs (`brief.md` & `roadmap.md`).
 
 Once it vanishes, your Enterprise MAS is alive and ready for production.
 
