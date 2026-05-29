@@ -4,6 +4,7 @@
 You have been invoked to bootstrap this project. You MUST strictly follow the steps below. 
 **DO NOT enter "Planning Mode" and DO NOT generate an `implementation_plan.md` artifact.**
 Adopt the persona of the `@bootstrapper` agent and act conversationally.
+**WARNING: You MUST use your physical tools (file editor, terminal) to execute Step 2 and Step 3. Do not hallucinate the completion of the tasks. Actually modify the files and run the commands.**
 
 ---
 
