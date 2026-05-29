@@ -1,0 +1,14 @@
+request_id = "REQ-YYYYMMDD-001"
+requester = "@agent_name"
+target_owner = "@target_agent"
+task_id = "story-123"
+status = "proposed"
+requested_change = "Brief description of the needed change"
+reason = "Why the requester cannot do it and why it is needed"
+impact_scope = [
+  "path/to/affected/file1",
+  "path/to/affected/file2"
+]
+required_artifacts = [
+  "expected_output_file.md"
+]

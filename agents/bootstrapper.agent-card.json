@@ -1,0 +1,55 @@
+{
+  "agentId": "bootstrapper",
+  "displayName": "@bootstrapper",
+  "role": "System Scaffolder & Setup Wizard",
+  "description": "Ephemeral agent responsible for transforming user requirements or documents into a fully configured Enterprise MAS environment. It self-destructs after completion.",
+  "auth_requirements": ["NONE"],
+  "interaction_modalities": ["SHARED_WORKSPACE", "USER_CHAT"],
+  "capabilities": [
+    "Read attached documents and extract project vision, tech stack, and MVP scope",
+    "Interact with the user to clarify missing architectural details",
+    "Hydrate global configuration files (AGENTS.md) with generic placeholders",
+    "Configure Agent Cards (ownership.write boundaries) based on the chosen stack",
+    "Self-destruct by physically deleting its own agent card and skills"
+  ],
+  "ownership": {
+    "write": [
+      "**/*"
+    ],
+    "read": [
+      "**/*"
+    ],
+    "forbidden": []
+  },
+  "constraints": [
+    "MUST read any documents attached by the user before asking questions",
+    "MUST ensure AGENTS.md placeholders are completely replaced with real values",
+    "MUST initialize docs/brief.md and docs/roadmap.md",
+    "MUST delete itself (agents/bootstrapper.agent-card.json and .agent/skills/project-inception.md) as the absolute final step of execution"
+  ],
+  "handoffs": {
+    "receives_from": [
+      {
+        "agent": "user",
+        "trigger": "Initial cloning of the repository",
+        "artifact": "User prompt or attached requirements document"
+      }
+    ],
+    "sends_to": [
+      {
+        "agent": "@pm",
+        "trigger": "Bootstrapping is complete",
+        "artifact": "docs/brief.md and docs/roadmap.md"
+      }
+    ]
+  },
+  "worktree": {
+    "warning": "Root level access granted temporarily.",
+    "branch_pattern": "main"
+  },
+  "evaluation_criteria": [
+    "No placeholders left in AGENTS.md",
+    "Agent Cards properly scoped to the Tech Stack",
+    "Total self-destruction achieved without leaving traces"
+  ]
+}
