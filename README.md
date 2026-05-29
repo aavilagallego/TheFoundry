@@ -77,13 +77,15 @@ Automated quality rubrics used by `@qa` to verify code against business requirem
 
 Anyone can download this framework and use it to build their own software project in a single, frictionless step:
 
-### Step 1: The Magic Command
-In your AI Agent Chat, drop your project idea, attach any specification documents (if you have them), and invoke the **Ephemeral Setup Wizard**:
+### Step 1: The Magic Prompt
+Copy and paste this exact prompt into your AI Agent (Antigravity, Cursor, Claude, etc.):
 
-> *"@bootstrapper, I want to build a new project. Here is my idea... [OR ATTACH A DOCUMENT]. Please set up the environment."*
+```text
+Deploy the bootstrap of the project from here https://github.com/aavilagallego/TheFoundry and let's start working. @bootstrapper, I want to build a [YOUR PROJECT IDEA]. Please set up the environment.
+```
 
 **The `@bootstrapper` will autonomously:**
-1. Interview you to fill any missing gaps (like your preferred Tech Stack).
+1. Clone the repository and interview you to fill any missing gaps (like your preferred Tech Stack).
 2. Hydrate the `AGENTS.md` Constitution with your project's DNA.
 3. Configure the specific folder boundaries for the `@frontend` and `@backend` agents based on your chosen stack.
 4. Draft the initial `docs/roadmap.md` and `docs/brief.md`.
