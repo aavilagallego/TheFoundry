@@ -81,18 +81,17 @@ Anyone can download this framework and use it to build their own software projec
 Copy and paste this exact prompt into your AI Agent (Antigravity, Cursor, Claude, etc.):
 
 ```text
-Clone the repository from https://github.com/aavilagallego/TheFoundry into the workspace.
-I want to build a [YOUR PROJECT IDEA]. 
-CRITICAL SYSTEM INSTRUCTION: Adopt the persona of the @bootstrapper agent. Do NOT enter Planning Mode and do NOT create an implementation plan artifact. Read the instructions in `.agent/skills/project-inception.md`. Ask me any missing questions (like Tech Stack) conversationally in a single message. Once answered, execute the hydration, handoff, and self-destruct sequence immediately.
+Clone https://github.com/aavilagallego/TheFoundry and execute start.md
 ```
 
-**The `@bootstrapper` will autonomously:**
-1. Clone the repository and interview you to fill any missing gaps (like your preferred Tech Stack).
+**What happens next?**
+The system will automatically read the `start.md` file, which contains explicit instructions for the AI to adopt the `@bootstrapper` persona. It will:
+1. Interview you for your project details (Tech Stack, Idea).
 2. Hydrate the `AGENTS.md` Constitution with your project's DNA.
 3. Configure the specific folder boundaries for the `@frontend` and `@backend` agents based on your chosen stack.
 4. Draft the initial `docs/roadmap.md` and `docs/brief.md`.
 5. Hand over control to the permanent Product Manager (`@pm`).
-6. **Self-Destruct:** It will completely remove the Foundry `origin` remote, and permanently delete its own source code to ensure your repository remains perfectly clean.
+6. **Self-Destruct:** It will completely remove the Foundry `origin` remote, and permanently delete its own source code (including the `start.md` file) to ensure your repository remains perfectly clean.
 
 Once it vanishes, your Enterprise MAS is alive and ready for production.
 
