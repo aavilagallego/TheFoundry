@@ -84,15 +84,22 @@ Copy and paste this exact prompt into your AI Agent (Antigravity, Cursor, Claude
 Clone https://github.com/aavilagallego/TheFoundry and execute start.md
 ```
 
-**What happens next?**
-The system will automatically read the `start.md` file, which contains explicit instructions for the AI to adopt the `@bootstrapper` persona. It will:
-1. Interview you for your project details (Tech Stack, Idea).
-2. Hydrate the `AGENTS.md` Constitution with your project's DNA.
-3. Configure the specific folder boundaries for the `@frontend` and `@backend` agents based on your chosen stack.
-4. **Self-Destruct:** It will completely remove the Foundry `origin` remote, and permanently delete its own source code (including the `start.md` file) to ensure your repository remains perfectly clean.
-5. Provide you with a ready-to-use prompt to hand over control to the permanent Product Manager (`@pm`) so you can define your MVP and product docs (`brief.md` & `roadmap.md`).
+### How It Works: The Domino Effect Workflow
+The magic of The Foundry is that you don't orchestrate agents manually; they pass the baton to each other autonomously. When you run the Magic Prompt, you trigger a chain reaction:
 
-Once it vanishes, your Enterprise MAS is alive and ready for production.
+1. 🏗️ **Phase 1: Physical Setup (`@bootstrapper`)**
+   The AI adopts the SysAdmin persona. It asks for your Tech Stack, configures the repository's rules (`AGENTS.md`), assigns folder permissions, and then **permanently deletes its own source code** for security. Finally, it gives you a prompt to wake up the PM.
+   
+2. 📊 **Phase 2: Product Definition (`@pm`)**
+   The AI switches to the Product Manager persona. It interviews you purely about the business logic to define your MVP scope, creating your `docs/brief.md` and `docs/roadmap.md`. It then gives you a prompt to wake up the Architect.
+   
+3. 🏛️ **Phase 3: Tech Scaffolding (`@architect`)**
+   The Architect takes over. It reads the PM's roadmap, establishes the technical directories, and extracts tiny pieces of context for the developers (to prevent token exhaustion). It generates physical Markdown task tickets.
+   
+4. 💻 **Phase 4: Isolated Execution (`@frontend` / `@backend`)**
+   Your developer agents wake up, read their isolated task tickets from the Kanban board, and start writing code. If they fail a test 5 times, they hit their "Step Budget" and halt to prevent infinite loops.
+
+Once the `@bootstrapper` vanishes in Phase 1, your Enterprise MAS is perfectly governed, alive, and ready for production.
 
 ---
 
