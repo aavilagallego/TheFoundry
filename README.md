@@ -73,6 +73,36 @@ Automated quality rubrics used by `@qa` to verify code against business requirem
 
 ---
 
+## 🤖 Meet the Team: Included Agents & Skills
+
+The Foundry comes pre-configured with a specialized team. Each agent has its own `agent-card.json` dictating its exact permissions and boundaries.
+
+* 🏗️ **`@bootstrapper`**: Ephemeral SysAdmin. Clones, configures, and self-destructs.
+* 📊 **`@pm`**: Product Manager. Interviews you to define the MVP, user stories, and writes `brief.md`. Forbidden from touching code.
+* 🏛️ **`@architect`**: Enterprise Architect. Designs data models, scopes technical context, and generates physical task tickets for the developers.
+* 💻 **`@frontend` & `@backend`**: Software Engineers. They pull their tasks from the Kanban board and write code in their specific folders.
+* 🛡️ **`@qa`**: Quality Assurance. Evaluates code against Acceptance Criteria in `evals/`.
+* ⚙️ **`@devops`**: Infrastructure Manager. Manages Docker, CI/CD, and deployments.
+* 👮 **`@api-steward`**: API Guardian. Ensures OpenAPI contracts are not broken between frontend and backend.
+
+### Key Agent Skills (`.agent/skills/`)
+Agents are equipped with physical Markdown "skills" (Standard Operating Procedures):
+* **`agent-work-loop.md`**: The core autonomous execution loop every agent follows.
+* **`plan-epic.md`**: The Architect's process to decompose business requirements into physical tickets.
+* **`manage-context-budget.md`**: Forces agents to strictly manage their token windows.
+
+---
+
+## 💰 FinOps & Token Economy
+
+Running multi-agent systems can get incredibly expensive if agents are allowed to "think globally" on every prompt. The Foundry is engineered for strict FinOps:
+
+* **Just-In-Time (JIT) Context:** Developers are constitutionally forbidden from reading the massive global `docs/spec.md`. The Architect extracts only the tiny pieces they need and creates localized `.agent-context.md` files. This saves millions of input tokens per project.
+* **5-Step Execution Budgets:** To prevent agents from getting stuck in infinite debugging loops (which burn tokens exponentially), The Foundry enforces a strict 5-attempt limit. On the 5th failure, the agent must halt and request human intervention.
+* **Chat is for Handoffs, not Code:** Instead of pasting thousands of lines of code into the chat UI (which wastes context window), agents write physical tickets and code directly to the file system.
+
+---
+
 ## 🚀 How to Bootstrap Your Own Project
 
 Anyone can download this framework and use it to build their own software project in a single, frictionless step:
