@@ -57,8 +57,9 @@ This skill defines the primary cognitive routine the `@architect` runs when plan
 ### Step 7: Create Cross-Agent Change Requests (A2A)
 * If there are immediate blocking dependencies (e.g., Frontend needs Backend's schemas), write a change request under `.agent/requests/{targetAgent}-requests/` to be read during their work loop.
 
-### Step 8: Team Invocation & Chat Notification
+### Step 8: Team Invocation & Monitoring
 * Do NOT ask the user to copy-paste prompts.
 * If your platform supports subagent invocation tools (e.g., `invoke_subagent`), launch the `@frontend` and `@backend` agents in the background to execute their physical task tickets.
+* **CRITICAL MONITORING:** If you launch subagents in the background, you MUST monitor their progress. Read `.agent/team_status.md` to track their states (`IN_PROGRESS`, `BLOCKED`, `IDLE`). If a subagent marks itself as `BLOCKED`, you must intervene to resolve the blocker or escalate to the user.
 * If your platform does NOT support background agents, instruct the user to explicitly `@-mention` the developer agents to pass the baton.
 * Reply to the user concisely. Confirm that the Epic has been successfully planned, listing the active agents and their assigned tasks (with clickable markdown links).

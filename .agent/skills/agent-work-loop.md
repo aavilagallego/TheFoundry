@@ -19,7 +19,7 @@ This skill defines the cognitive state machine that every agent runs upon receiv
 
 ### Phase 0: Initialization and Shared Awareness
 1. **Kanban Sync:** Read `.agent/team_status.md` to understand the state of the team.
-2. **Status Registration:** Update your own status in `.agent/team_status.md` to `🟡 IN_PROGRESS` indicating the current task ID.
+2. **Status Registration:** You MUST update your own status in `.agent/team_status.md` to `🟡 IN_PROGRESS` indicating the current task ID. **Failure to update the Kanban board before executing tasks is a critical violation of framework rules.**
 
 ### Phase 1: Intent Detection (Natural Language Intent Parsing)
 Parse the user's message semantically to map it to a specific skill or technical workflow:
@@ -80,4 +80,4 @@ Validate specifications against project guidelines before writing code:
    * **Technical Audit Trail:** Save the active `implementation_plan.md` permanently under `docs/architecture/plans/epic-{N}-{agentId}-implementation-plan.md` (where `{N}` is the active Epic and `{agentId}` is the agent ID). This preserves history for debugs and onboarding.
 3. **A2A Handoff Notification:** If completing this task unblocks a peer agent, notify them by writing a TOML request under `.agent/requests/{targetAgent}-requests/`.
 4. **Pull Next Task:** If all tasks are completed and there are no requests in queue, the agent is **prohibited** from going idle. Write a TOML request file at `.agent/requests/architect-requests/next-task-{agentId}.toml` using the change request template to pull the next task from the roadmap, and notify the user.
-5. **Kanban Closure:** Finally, update your status in `.agent/team_status.md` to `🟢 IDLE` or `🔴 BLOCKED` if waiting for another agent.
+5. **Kanban Closure:** Finally, you MUST update your status in `.agent/team_status.md` to `🟢 IDLE` or `🔴 BLOCKED` if waiting for another agent. Leaving your status as `IN_PROGRESS` while inactive breaks the team's shared awareness.
