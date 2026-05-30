@@ -47,6 +47,7 @@ This skill defines the primary cognitive routine the `@architect` runs when plan
 
 ### Step 6: Physical Task Ticket Generation (Workspace-First)
 * **GOLDEN RULE:** Do not dump extensive code guidelines or megaprompts in the chat interface.
+* **MODULAR DECOMPOSITION MANDATE:** To prevent LLM context clipping, you MUST break down tasks atomically. Never assign monolithic tasks (e.g. "Build the dashboard"). Instead, assign granular tasks (e.g. "Build <Sidebar /> component", "Create user DB migration"). Keep file generations small and focused.
 * Create or overwrite individual task files in `.agent/tasks/{agentId}-tasks.md` for each developer role detected in Step 1.
 * **Required Ticket Structure (`.agent/tasks/{agentId}-tasks.md`):**
   1. **Header:** Epic and Sprint name.
