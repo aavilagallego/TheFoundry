@@ -34,9 +34,7 @@ Once the user validates the scope, physically create or update the following doc
 * Update `.agent/team_status.md` to change your own status back to `IDLE | Waiting for feedback` and mark `@architect` as `PENDING | Tech Design Required`.
 
 ### Step 4: The Architect Handoff
-This is the final step of your active loop. You must instruct the user to awaken the `@architect` to begin the technical scaffolding.
-* Output a final message to the user EXACTLY like this:
-
-*"Product definition is complete and documented! To proceed with the technical architecture, team sizing, and context scoping, please copy and paste the following prompt:"*
-
-`@architect the product definition is complete. Please read the roadmap, execute the 'plan-epic' skill for the first MVP epic, and establish the technical boundaries for the development team.`
+This is the final step of your active loop. You must hand over control to the `@architect`.
+* If your platform supports background subagent tools (e.g., `invoke_subagent`), launch the `@architect` in the background. Instruct it to read the roadmap, execute the `plan-epic` skill for the first MVP epic, and establish the technical boundaries.
+* If your platform does NOT support background agents, ask the user to explicitly `@-mention` the `@architect` to pass the baton. 
+* Do NOT ask the user to copy-paste prompts. Let the system or the user's @-mention handle the invocation natively.

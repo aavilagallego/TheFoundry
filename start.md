@@ -32,6 +32,8 @@ To protect the Principle of Least Privilege and detach from the template:
    - `agents/bootstrapper.agent-card.json`
    - `.agent/skills/project-inception.md`
    - `start.md` (this file)
-3. Send a final message to the user EXACTLY like this: 
-*"Setup completed. The monorepo is secured and detached. Please run `git remote add origin <your-repo>` to link your repository. Then, copy and paste this prompt to start the product definition:"*
-`@pm the environment is ready. I want to build a [Insert Project Name]. Please interview me to define the MVP scope, and create the docs/brief.md and docs/roadmap.md.`
+3. Send a final message to the user:
+*"Setup completed. The monorepo is secured and detached. Please run `git remote add origin <your-repo>` to link your repository."*
+4. **Handoff:** Hand over control to the Product Manager (`@pm`). 
+   - If your platform supports background subagents (e.g., `invoke_subagent`), launch `@pm` in the background and tell it to start the MVP interview.
+   - If your platform requires user action, simply ask the user to `@-mention` the `@pm` to begin the MVP definition. Do NOT ask the user to copy-paste prompts.

@@ -57,11 +57,8 @@ This skill defines the primary cognitive routine the `@architect` runs when plan
 ### Step 7: Create Cross-Agent Change Requests (A2A)
 * If there are immediate blocking dependencies (e.g., Frontend needs Backend's schemas), write a change request under `.agent/requests/{targetAgent}-requests/` to be read during their work loop.
 
-### Step 8: Executive Chat Notification
-* Reply to the user in the chat concisely.
-* **The notification must contain:**
-  * Confirmation that the Epic has been successfully planned.
-  * List of active agents and their assigned roles.
-  * **Clickable markdown links to the task tickets created** (using `[label](file:///absolute/path/to/file)` syntax).
-  * Short summary of the integration sequence.
-  * Call-to-action for the user to approve and kick off the tasks.
+### Step 8: Team Invocation & Chat Notification
+* Do NOT ask the user to copy-paste prompts.
+* If your platform supports subagent invocation tools (e.g., `invoke_subagent`), launch the `@frontend` and `@backend` agents in the background to execute their physical task tickets.
+* If your platform does NOT support background agents, instruct the user to explicitly `@-mention` the developer agents to pass the baton.
+* Reply to the user concisely. Confirm that the Epic has been successfully planned, listing the active agents and their assigned tasks (with clickable markdown links).
